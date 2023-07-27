@@ -103,4 +103,4 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para 
 
 ## Autor
 
-Desenvolvido por [Seu Nome](<URL_DO_SEU_GITHUB>).
+Desenvolvido por Carlos Alberto Junior
