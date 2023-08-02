@@ -16,6 +16,9 @@ public class Produto {
     private String fornecedor;
     private BigDecimal valor;
 
+    public Produto() {
+    }
+
     public Long getId() {
         return id;
     }

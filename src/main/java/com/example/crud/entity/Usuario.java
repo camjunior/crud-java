@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuarios")
+
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,11 +21,8 @@ public class Usuario {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private boolean enabled;
-
-    @Column(nullable = false)
-    private String roles;
+    public Usuario() {
+    }
 
     public Long getId() {
         return id;
@@ -50,28 +48,10 @@ public class Usuario {
         this.password = password;
     }
 
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public String getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String roles) {
-        this.roles = roles;
-    }
-
-    public Usuario(Long id, String username, String password, boolean enabled, String roles) {
+    public Usuario(Long id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.enabled = enabled;
-        this.roles = roles;
     }
 
 }
