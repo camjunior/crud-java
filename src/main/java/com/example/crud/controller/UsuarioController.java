@@ -22,16 +22,20 @@ public class UsuarioController {
     public ResponseEntity<Usuario> criarUsuario(@RequestBody Usuario novoUsuario) {
 
         Usuario usuarioCriado = usuarioRepository.save(novoUsuario);
+        System.out.println("usuario criado:" + usuarioCriado);
 
         return ResponseEntity.ok(usuarioCriado);
+
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> loginData) {
         String username = loginData.get("username");
         String password = loginData.get("password");
+        System.out.println("username:" + username + " password: " + password);
 
         Usuario usuario = usuarioRepository.findByUsername(username);
+        System.out.println("usuario:" + usuario);
 
         if (usuario != null && usuario.getPassword().equals(password)) {
             // Login bem-sucedido
